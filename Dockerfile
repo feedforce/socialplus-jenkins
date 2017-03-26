@@ -1,4 +1,5 @@
 FROM jenkins:alpine
+LABEL maintainer "socialplus_admin@feedforce.jp"
 
 ENV JENKINS_OPTS --sessionTimeout=1440
 
