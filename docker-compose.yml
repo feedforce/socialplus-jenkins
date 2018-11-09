@@ -1,0 +1,11 @@
+version: "3"
+services:
+  jenkins:
+    image: feedforce/socialplus-jenkins
+    # build: . # for development
+    restart: always
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - "./var:/var/jenkins_home"
