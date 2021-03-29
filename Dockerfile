@@ -13,8 +13,8 @@ RUN apk add --no-cache \
         readline-dev \
         zlib-dev \
         mariadb-dev \
-        python-dev \
-        py-pip \
+        python3-dev \
+        py3-pip \
         rsync && \
     pip install --upgrade pip && \
     pip install awscli
