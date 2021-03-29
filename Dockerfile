@@ -15,7 +15,8 @@ RUN apk add --no-cache \
         mariadb-dev \
         python3-dev \
         py3-pip \
-        rsync && \
+        rsync \
+        shared-mime-info && \
     pip install --upgrade pip && \
     pip install awscli
 USER jenkins
