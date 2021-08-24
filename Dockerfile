@@ -9,7 +9,6 @@ RUN apk add --no-cache \
         libc-dev \
         linux-headers \
         make \
-        libressl-dev \
         readline-dev \
         zlib-dev \
         mariadb-dev \
