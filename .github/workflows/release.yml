@@ -4,7 +4,6 @@ name: Create and publish a Docker image
 
 on:
   push:
-    branches: ["main"]
 
 env:
   REGISTRY: ghcr.io
@@ -33,6 +32,12 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          # デフォルトだと git tag を使った場合しか latest tag が push されないため
+          #
+          # see https://github.com/docker/metadata-action/tree/3a3bb3a81753dc99f090d24ee7e5343838b73a96#flavor-input
+          # see https://github.com/docker/metadata-action/tree/3a3bb3a81753dc99f090d24ee7e5343838b73a96#latest-tag
+          flavor: |
+            latest=true
           # see https://github.com/docker/metadata-action/tree/3a3bb3a81753dc99f090d24ee7e5343838b73a96#tags-input
           tags: |
             type=ref,event=branch
